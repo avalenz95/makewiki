@@ -1,0 +1,7 @@
+<h1>{{pages_list}}</h1>
+
+{%for page in pages_list%}
+    <h2>Title: {{page.title}}</h2>
+    <h2>Author: {{page.author}}</h2>
+    <span>{{page.content}}</span>
+{% endfor %}
