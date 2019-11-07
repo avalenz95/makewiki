@@ -20,9 +20,7 @@ class PageList(ListView):
 
 class PageDetailView(DetailView):
     """
-    CHALLENGES:
-      1. On GET, render a template named `page.html`.
-      2. Replace this docstring with a description of what thos accomplishes.
+      Returns a single object page based on the objects slug
 
     STRETCH CHALLENGES:
       1. Import the PageForm class from forms.py.
@@ -39,7 +37,11 @@ class PageDetailView(DetailView):
 
     def get(self, request, slug):
         """ Returns a specific of wiki page by slug. """
-        pass
+
+        #find page associated with the slug
+        single_page = Page.objects.get(slug=slug)
+
+        return render(request, 'wiki/page.html', {'page' : single_page} )
 
     def post(self, request, slug):
         pass
