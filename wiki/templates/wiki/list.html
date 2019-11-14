@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+
+{% block content %}
 <h1>{{pages_list}}</h1>
 
 {%for page in pages_list%}
@@ -6,3 +9,5 @@
     <h3>Slug: {{page.slug}}</h3>
     <span>{{page.content}}</span>
 {% endfor %}
+
+{% endblock %}

@@ -38,7 +38,7 @@ class PageDetailView(DetailView):
     def get(self, request, slug):
         """ Returns a specific of wiki page by slug. """
 
-        #find page associated with the slug
+        #find page associated with the slug i_exact() better - case insensitve
         single_page = Page.objects.get(slug=slug)
 
         return render(request, 'wiki/page.html', {'page' : single_page} )
